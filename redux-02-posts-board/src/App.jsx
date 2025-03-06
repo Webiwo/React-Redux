@@ -1,5 +1,5 @@
-import PostsList from "./features/postsSlice/PostsList";
-import PostForm from "./features/postsSlice/PostForm";
+import PostsList from "./features/posts/PostsList";
+import PostForm from "./features/posts/PostForm";
 
 function App() {
   return (
