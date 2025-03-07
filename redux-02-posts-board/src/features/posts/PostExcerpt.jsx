@@ -3,7 +3,6 @@ import PostTimePeriod from "./postTimePeriod";
 import ReactionButtons from "./ReactionButtons";
 
 const PostExcerpt = ({ post }) => {
-  console.log("PostExcert");
   return (
     <article>
       <h3>{post.title}</h3>
