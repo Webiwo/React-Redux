@@ -2,9 +2,11 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addNewPost } from "./postSlice";
 import { allUsers } from "../users/usersSlice";
+import { useNavigate } from "react-router-dom";
 
 const PostForm = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const users = useSelector(allUsers);
 
   const [title, setTitle] = useState("");
@@ -27,6 +29,7 @@ const PostForm = () => {
         setTitle("");
         setContent("");
         setUserId("");
+        navigate("/");
       } catch (err) {
         console.error("Failed to save the post", err);
       } finally {
@@ -46,7 +49,7 @@ const PostForm = () => {
       <h2>Add a new post</h2>
       <form>
         <label htmlFor="postAuthor">Author:</label>
-        <select id="postAuthor" vaule={userId} onChange={onAuthorChange}>
+        <select id="postAuthor" value={userId} onChange={onAuthorChange}>
           <option value="">--Choose an author--</option>
           {usersOptions}
         </select>
